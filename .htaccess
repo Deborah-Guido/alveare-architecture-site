@@ -1,0 +1,34 @@
+# Alveare Architecture — configuration Apache (OVHcloud, o2switch, Infomaniak)
+
+# Forcer HTTPS et le www
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^alveare-architecture\.fr$ [NC]
+RewriteRule ^(.*)$ https://www.alveare-architecture.fr/$1 [L,R=301]
+
+# Redirections 301 des anciennes adresses Wix vers les nouvelles pages
+RedirectMatch 301 ^/patrimoine/?$ /patrimoine.html
+RedirectMatch 301 ^/moexe/?$ /moex.html
+RedirectMatch 301 ^/environnement/?$ /environnement.html
+RedirectMatch 301 ^/articles/?$ /journal.html
+RedirectMatch 301 ^/blog/?$ /journal.html
+RedirectMatch 301 ^/contact/?$ /contact.html
+RedirectMatch 301 ^/inquiry-services-page/?$ /contact.html
+RedirectMatch 301 ^/mentions-l(%C3%A9|é)gales/?$ /mentions-legales.html
+# Les articles /journal/... restent sur Wix tant qu'ils n'ont pas été migrés : ne pas rediriger.
+
+# Page 404
+ErrorDocument 404 /404.html
+
+# Encodage et cache
+AddDefaultCharset UTF-8
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css image/svg+xml
+</IfModule>
