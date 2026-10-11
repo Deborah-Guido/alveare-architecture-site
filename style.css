@@ -117,7 +117,7 @@ button { font: inherit; }
 }
 .home-hero-wrap .site-nav .logo, .home-hero-wrap .site-nav .nav-links a { color: #1c1c1c; }
 .hero { width: 100%; height: 100%; position: relative; background: #2a2825; }
-.hero img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.02); }
+.hero img { width: 100%; height: 100%; object-fit: cover; }
 .home-hero-wrap::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(to bottom, rgba(0,0,0,.08) 0%, transparent 30%, transparent 55%, rgba(0,0,0,.55) 100%);
@@ -247,10 +247,9 @@ button { font: inherit; }
 }
 .work-tile img {
   width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(100%);
-  transition: transform .5s ease, filter .5s ease; will-change: transform, filter;
+  transition: transform .5s ease; will-change: transform;
 }
-.work-tile:hover img, .work-tile:focus-visible img { transform: scale(1.04); filter: grayscale(0%); }
+.work-tile:hover img, .work-tile:focus-visible img { transform: scale(1.04); }
 .work-tile::before {
   content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
   background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 62%, rgba(0,0,0,.55) 100%);
@@ -268,7 +267,7 @@ button { font: inherit; }
 .tile-static::before { background: linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 42%); }
 
 .wide-image { width: 100%; border-radius: var(--radius); overflow: hidden; aspect-ratio: 21 / 9; background: #000; }
-.wide-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
+.wide-image img { width: 100%; height: 100%; object-fit: cover; }
 
 /* liens flèches */
 .arrow-link {
@@ -472,3 +471,34 @@ form.contact-form { max-width: 620px; }
   .article-pager a:last-child { text-align: left; }
   .article-content th, .article-content td { padding-right: 10px; font-size: 13px; }
 }
+
+/* ---------- Articles : robustesse mobile ---------- */
+.content-wrap > .content, .content-wrap > article.content { min-width: 0; }
+.article-content .table-wrap { max-width: 100%; }
+.article-content p, .article-content li { overflow-wrap: anywhere; }
+@media (max-width: 639px) {
+  .article-content .table-wrap { border-top: 0; overflow: visible; }
+  .article-content .table-wrap table, .article-content .table-wrap tbody, .article-content .table-wrap tr, .article-content .table-wrap td { display: block; width: 100%; }
+  .article-content .table-wrap tr { border-top: 1px solid var(--ink); padding: 14px 0 6px; }
+  .article-content .table-wrap tr:first-child { display: none; }
+  .article-content .table-wrap.cols-1 tr:first-child { display: block; }
+  .article-content .table-wrap.cols-1 tr:first-child th { display: block; border: 0; padding: 0 0 6px; font-size: 15px; }
+  .article-content .table-wrap td { border: 0; padding: 0 0 12px; font-size: 14px; }
+  .article-content .table-wrap td::before { content: attr(data-label); display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .article-content .table-wrap.cols-1 td::before { display: none; }
+  .article-content .table-wrap td:first-child { color: var(--ink); font-weight: 500; }
+  .article-content .article-lede { font-size: 22px; }
+  .article-content h2 { font-size: 26px; }
+}
+
+/* ---------- Articles : illustrations ---------- */
+.article-figure { margin: 36px 0 44px; }
+.article-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+.article-figure figcaption, .article-gallery figcaption { margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.article-gallery { margin-top: 56px; }
+.article-gallery h2 { margin-top: 0; }
+.article-gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.article-gallery-grid figure { margin: 0; }
+.article-gallery-grid img { width: 100%; height: auto; display: block; border-radius: 12px; background: #cfccc8; }
+.article-gallery-grid figure:nth-child(7) { grid-column: 1 / -1; }
+@media (max-width: 639px) { .article-gallery-grid { grid-template-columns: 1fr; gap: 18px; } }

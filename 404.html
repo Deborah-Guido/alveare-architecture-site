@@ -68,8 +68,8 @@
   var f=document.querySelector('form.contact-form');
   if(f){f.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var fd=new FormData(f), lines=[];
-    fd.forEach(function(v,k){ if(v) lines.push(k+' : '+v); });
+    var fd=new FormData(f), lines=[], seen={};
+    fd.forEach(function(v,k){ if(!v) return; if(seen[k]!==undefined){lines[seen[k]]+=', '+v;} else {seen[k]=lines.length; lines.push(k+' : '+v);} });
     var body=encodeURIComponent(lines.join('\n'));
     window.location.href='mailto:dguido@alveare-architecture.fr?subject='+encodeURIComponent('Demande via alveare-architecture.fr')+'&body='+body;
   });}
