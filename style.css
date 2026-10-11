@@ -502,3 +502,4 @@ form.contact-form { max-width: 620px; }
 .article-gallery-grid img { width: 100%; height: auto; display: block; border-radius: 12px; background: #cfccc8; }
 .article-gallery-grid figure:nth-child(7) { grid-column: 1 / -1; }
 @media (max-width: 639px) { .article-gallery-grid { grid-template-columns: 1fr; gap: 18px; } }
+.article-figure-small img { max-width: 300px; border-radius: 12px; }
