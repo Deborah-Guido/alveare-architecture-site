@@ -60,19 +60,18 @@
           <label><input type="checkbox" name="Protection" value="Bâti ancien"> Bâti ancien</label>
         </div>
       </fieldset>
-      <div class="field full">
-        <label for="mission">Mission souhaitée</label>
-        <select id="mission" name="Mission souhaitée">
-          <option value="">—</option>
-          <option>Diagnostic et étude historique</option>
-          <option>Maîtrise d'œuvre de conception</option>
-          <option>Dossier réglementaire MH / ABF</option>
-          <option>Maîtrise d'œuvre d'exécution / OPC</option>
-          <option>Audit énergétique réglementaire</option>
-          <option>DTG / PPT / PPPT</option>
-          <option>Autre</option>
-        </select>
-      </div>
+      <fieldset class="field full" style="border:0">
+        <legend style="font-size:14px;color:var(--muted);margin-bottom:12px">Mission souhaitée</legend>
+        <div class="checks">
+          <label><input type="checkbox" name="Mission" value="Diagnostic et étude historique"> Diagnostic et étude historique</label>
+          <label><input type="checkbox" name="Mission" value="Maîtrise d'œuvre de conception"> Maîtrise d'œuvre de conception</label>
+          <label><input type="checkbox" name="Mission" value="Dossier réglementaire MH / ABF"> Dossier réglementaire MH / ABF</label>
+          <label><input type="checkbox" name="Mission" value="Maîtrise d'œuvre d'exécution / OPC"> Maîtrise d'œuvre d'exécution / OPC</label>
+          <label><input type="checkbox" name="Mission" value="Audit énergétique réglementaire"> Audit énergétique réglementaire</label>
+          <label><input type="checkbox" name="Mission" value="DTG / PPT / PPPT"> DTG / PPT / PPPT</label>
+          <label><input type="checkbox" name="Mission" value="Autre"> Autre</label>
+        </div>
+      </fieldset>
       <div class="field full"><label for="message">Votre message</label><textarea id="message" name="Message" rows="3"></textarea></div>
       <button class="submit-btn" type="submit">Envoyer</button>
       <p class="form-note">Le formulaire prépare un courriel adressé à l'agence depuis votre messagerie. Les pièces jointes (plans, photos) peuvent y être ajoutées directement.</p>
@@ -112,8 +111,8 @@
   var f=document.querySelector('form.contact-form');
   if(f){f.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var fd=new FormData(f), lines=[];
-    fd.forEach(function(v,k){ if(v) lines.push(k+' : '+v); });
+    var fd=new FormData(f), lines=[], seen={};
+    fd.forEach(function(v,k){ if(!v) return; if(seen[k]!==undefined){lines[seen[k]]+=', '+v;} else {seen[k]=lines.length; lines.push(k+' : '+v);} });
     var body=encodeURIComponent(lines.join('\n'));
     window.location.href='mailto:dguido@alveare-architecture.fr?subject='+encodeURIComponent('Demande via alveare-architecture.fr')+'&body='+body;
   });}
