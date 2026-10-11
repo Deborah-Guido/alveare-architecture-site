@@ -15,7 +15,6 @@ RedirectMatch 301 ^/blog/?$ /journal.html
 RedirectMatch 301 ^/contact/?$ /contact.html
 RedirectMatch 301 ^/inquiry-services-page/?$ /contact.html
 RedirectMatch 301 ^/mentions-l(%C3%A9|é)gales/?$ /mentions-legales.html
-# Les articles /journal/... restent sur Wix tant qu'ils n'ont pas été migrés : ne pas rediriger.
 
 # Page 404
 ErrorDocument 404 /404.html
@@ -32,3 +31,11 @@ AddDefaultCharset UTF-8
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css image/svg+xml
 </IfModule>
+
+# Anciennes adresses des articles (Wix) -> nouvelles pages
+Redirect 301 /journal/audit-energetique-copro-bati-patrimonial /journal-audit-energetique-copro-bati-patrimonial.html
+Redirect 301 /journal/strategie-et-management-de-chantier-en-maitrise-d-oeuvre /journal-strategie-et-management-de-chantier-en-maitrise-d-oeuvre.html
+Redirect 301 /journal/audit-energetique-secteur-protege /journal-audit-energetique-secteur-protege.html
+Redirect 301 /journal/menuiseries-acier-30-40 /journal-menuiseries-acier-30-40.html
+RedirectMatch 301 ^/journal/audit-.*1860-1914$ /journal.html
+RedirectMatch 301 ^/journal/?$ /journal.html
