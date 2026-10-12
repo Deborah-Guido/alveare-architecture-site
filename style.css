@@ -518,7 +518,7 @@ form.contact-form { max-width: 620px; }
 @media (max-width: 639px) { .method-grid, .places { grid-template-columns: 1fr; } }
 
 /* ---------- Articles : à retenir, sommaire, titres mobiles ---------- */
-.article-summary { border: 1px solid var(--ink); border-radius: 14px; padding: 22px 24px; margin: 0 0 32px; }
+.article-summary { border: 1px solid var(--ink); border-radius: 14px; padding: 22px 24px; margin: 48px 0 8px; }
 .article-summary .mono { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 .article-summary ul { list-style: none; margin: 0; padding: 0; }
 .article-summary li { color: var(--ink); font-size: 15px; line-height: 1.55; padding-left: 18px; position: relative; margin-bottom: 8px; }
