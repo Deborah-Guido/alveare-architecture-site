@@ -536,3 +536,9 @@ form.contact-form { max-width: 620px; }
   .article-toc ol { columns: 1; }
   .article-summary { padding: 18px; }
 }
+
+/* ---------- Références : informations sous le titre de droite ---------- */
+.section-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; max-width: 52ch; }
+.section-meta .meta-line { text-transform: none; letter-spacing: .02em; font-size: 12px; color: var(--muted); }
+.section-meta .meta-line:first-of-type { margin-top: 6px; }
+@media (max-width: 639px) { .section-meta { align-items: flex-start; text-align: left; } }
