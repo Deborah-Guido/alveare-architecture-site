@@ -552,16 +552,11 @@ form.contact-form { max-width: 620px; }
 
 .section-head-sub { padding-top: 40px; justify-content: flex-end; }
 
-/* Maison Variel : image carrée + image panoramique, sans recadrage */
-.work-grid.variel { grid-template-columns: 1fr 2.19fr; }
-.work-grid.variel .work-tile:first-child { aspect-ratio: 1 / 1; }
-.work-grid.variel .work-tile:last-child { aspect-ratio: 1200 / 547; }
-@media (max-width: 639px) { .work-grid.variel { grid-template-columns: 1fr; } }
-
-/* Pilier Nord : trois photos au format d'origine, hauteur commune */
-.work-grid.pilier { grid-template-columns: 1.205fr 0.729fr 0.612fr; }
-.work-grid.pilier .work-tile:nth-child(1) { aspect-ratio: 3616 / 3000; }
-.work-grid.pilier .work-tile:nth-child(2) { aspect-ratio: 2334 / 3200; }
-.work-grid.pilier .work-tile:nth-child(3) { aspect-ratio: 2318 / 3788; }
-@media (max-width: 900px) { .work-grid.pilier { grid-template-columns: 1fr 1fr; } .work-grid.pilier .work-tile:nth-child(1) { grid-column: 1 / -1; } }
-@media (max-width: 639px) { .work-grid.pilier { grid-template-columns: 1fr; } .work-grid.pilier .work-tile:nth-child(1) { grid-column: auto; } }
+/* Références : lignes de photos au format d'origine, hauteur commune par ligne */
+.work-rows { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.work-row { display: flex; gap: 4px; }
+.work-row .work-tile { flex: var(--ar) 1 0; aspect-ratio: var(--ar); min-width: 0; }
+@media (max-width: 639px) {
+  .work-row { flex-direction: column; }
+  .work-row .work-tile { flex: none; width: 100%; }
+}
