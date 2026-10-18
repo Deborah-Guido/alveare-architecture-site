@@ -548,3 +548,9 @@ form.contact-form { max-width: 620px; }
 @media (max-width: 639px) { .section-meta { align-items: flex-start; text-align: left; margin-bottom: 0; } #references .section-head, .section-head-sub { padding-bottom: 26px; } }
 
 .section-head-sub { padding-top: 40px; justify-content: flex-end; }
+
+/* Maison Variel : image carrée + image panoramique, sans recadrage */
+.work-grid.variel { grid-template-columns: 1fr 2.19fr; }
+.work-grid.variel .work-tile:first-child { aspect-ratio: 1 / 1; }
+.work-grid.variel .work-tile:last-child { aspect-ratio: 1200 / 547; }
+@media (max-width: 639px) { .work-grid.variel { grid-template-columns: 1fr; } }
