@@ -538,10 +538,12 @@ form.contact-form { max-width: 620px; }
 }
 
 /* ---------- Références : informations sous le titre de droite ---------- */
-.section-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; flex: 1 1 auto; min-width: 0; margin-bottom: -12px; }
+.section-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; flex: 1 1 auto; flex-shrink: 1; min-width: 0; white-space: normal; padding-bottom: 0; margin-bottom: -32px; }
+.section-meta > span { white-space: normal; }
 .section-head h2 { flex-shrink: 0; }
+#references .section-head, .section-head-sub { padding-bottom: 40px; }
 .section-meta .meta-line { text-transform: none; letter-spacing: .02em; font-size: 12px; color: var(--muted); }
 .section-meta .meta-line:first-of-type { margin-top: 6px; }
-@media (max-width: 639px) { .section-meta { align-items: flex-start; text-align: left; margin-bottom: 0; } }
+@media (max-width: 639px) { .section-meta { align-items: flex-start; text-align: left; margin-bottom: 0; } #references .section-head, .section-head-sub { padding-bottom: 26px; } }
 
 .section-head-sub { padding-top: 40px; justify-content: flex-end; }
