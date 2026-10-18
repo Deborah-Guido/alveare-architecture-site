@@ -554,3 +554,11 @@ form.contact-form { max-width: 620px; }
 .work-grid.variel .work-tile:first-child { aspect-ratio: 1 / 1; }
 .work-grid.variel .work-tile:last-child { aspect-ratio: 1200 / 547; }
 @media (max-width: 639px) { .work-grid.variel { grid-template-columns: 1fr; } }
+
+/* Pilier Nord : trois photos au format d'origine, hauteur commune */
+.work-grid.pilier { grid-template-columns: 1.205fr 0.729fr 0.612fr; }
+.work-grid.pilier .work-tile:nth-child(1) { aspect-ratio: 3616 / 3000; }
+.work-grid.pilier .work-tile:nth-child(2) { aspect-ratio: 2334 / 3200; }
+.work-grid.pilier .work-tile:nth-child(3) { aspect-ratio: 2318 / 3788; }
+@media (max-width: 900px) { .work-grid.pilier { grid-template-columns: 1fr 1fr; } .work-grid.pilier .work-tile:nth-child(1) { grid-column: 1 / -1; } }
+@media (max-width: 639px) { .work-grid.pilier { grid-template-columns: 1fr; } .work-grid.pilier .work-tile:nth-child(1) { grid-column: auto; } }
