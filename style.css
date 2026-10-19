@@ -216,7 +216,7 @@ button { font: inherit; }
 .section { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
 .section-head {
   display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
-  padding: 72px 0 26px; border-bottom: 1px solid var(--ink); margin-bottom: 34px;
+  padding: 72px 0 40px; border-bottom: 1px solid var(--ink); margin-bottom: 34px;
 }
 .section-head h2 {
   font-family: var(--display); font-weight: 400; font-size: clamp(38px, 4.4vw, 60px); line-height: 1; color: var(--ink);
@@ -539,6 +539,9 @@ form.contact-form { max-width: 620px; }
 
 /* ---------- Références : informations sous le titre de droite ---------- */
 .section-head { position: relative; }
+.section-head > .mono { position: absolute; right: 0; bottom: 8px; padding-bottom: 0; }
+.page-head-row { position: relative; }
+.page-head-row > .page-meta { position: absolute; right: 0; bottom: -4px; padding-bottom: 0; }
 .section-meta { position: absolute; right: 0; bottom: 8px; width: 100%; display: flex; flex-direction: column; align-items: flex-end; gap: 0; line-height: 1.25; text-align: right; white-space: nowrap; padding-bottom: 0; }
 .section-meta > span { white-space: nowrap; }
 .section-meta .meta-line { font-size: 11.5px; letter-spacing: .01em; }
@@ -548,7 +551,7 @@ form.contact-form { max-width: 620px; }
 @media (max-width: 760px) { .section-meta, .section-meta > span { white-space: normal; } .section-meta .nb { white-space: nowrap; } }
 .section-meta .meta-line { text-transform: none; letter-spacing: .02em; font-size: 12px; color: var(--muted); }
 .section-meta .meta-line:first-of-type { margin-top: 6px; }
-@media (max-width: 639px) { .section-meta { position: static; width: auto; align-items: flex-start; text-align: left; } .section-head-sub { min-height: 0; } #references .section-head, .section-head-sub { padding-bottom: 26px; } }
+@media (max-width: 639px) { .section-meta, .section-head > .mono, .page-head-row > .page-meta { position: static; width: auto; align-items: flex-start; text-align: left; } .section-head-sub { min-height: 0; } .section-head, #references .section-head, .section-head-sub { padding-bottom: 26px; } }
 
 .section-head-sub { padding-top: 40px; justify-content: flex-end; }
 
