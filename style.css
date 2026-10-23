@@ -201,7 +201,7 @@ button { font: inherit; }
 
 .list-under { margin: 0 0 8px; }
 .list-under li {
-  font-size: 15px; font-weight: 600; line-height: 1.7; color: var(--ink);
+  font-size: 13px; font-weight: 600; line-height: 1.85; color: var(--ink);
   text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; width: fit-content;
 }
 
