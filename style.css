@@ -565,8 +565,13 @@ form.contact-form { max-width: 620px; }
 .reference-portfolio .section-meta > span { white-space: normal; }
 .reference-portfolio .section-head-sub { min-height: 112px; }
 .reference-portfolio .work-tile img { object-fit: contain; }
+.reference-credits {
+  margin: 12px 0 0; color: var(--muted); font-family: var(--mono);
+  font-size: 11px; line-height: 1.6; text-align: right;
+}
 @media (max-width: 639px) {
   .work-row { flex-direction: column; }
   .work-row .work-tile { flex: none; width: 100%; }
   .reference-portfolio .section-head-sub { min-height: 0; }
+  .reference-credits { text-align: left; }
 }
