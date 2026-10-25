@@ -558,15 +558,15 @@ form.contact-form { max-width: 620px; }
 /* Références : lignes de photos au format d'origine, hauteur commune par ligne */
 .work-rows { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .work-row { display: flex; gap: 4px; }
-.work-row .work-tile { flex: var(--ar) 1 0; aspect-ratio: var(--ar); min-width: 0; }
+/* Evaluate source ratios before images load: fractions are invalid flex-grow
+   values unless wrapped in calc(), and can collapse lazy-loaded galleries. */
+.work-row .work-tile { flex: calc(var(--ar)) 1 0px; aspect-ratio: var(--ar); min-width: 0; }
 .reference-portfolio .section-meta,
 .reference-portfolio .section-meta > span { white-space: normal; }
 .reference-portfolio .section-head-sub { min-height: 112px; }
-.reference-portfolio .work-row .work-tile { flex: calc(var(--ar)) 1 0px; }
 .reference-portfolio .work-tile img { object-fit: contain; }
 @media (max-width: 639px) {
   .work-row { flex-direction: column; }
   .work-row .work-tile { flex: none; width: 100%; }
   .reference-portfolio .section-head-sub { min-height: 0; }
-  .reference-portfolio .work-row .work-tile { flex: none; width: 100%; }
 }
